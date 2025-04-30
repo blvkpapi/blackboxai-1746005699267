@@ -44,6 +44,8 @@ function AnalyticsScreen() {
   );
 }
 
+import AuthScreen from './src/components/AuthScreen';
+
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -62,6 +64,8 @@ export default function App() {
               iconName = 'people';
             } else if (route.name === 'Analytics') {
               iconName = 'stats-chart';
+            } else if (route.name === 'Auth') {
+              iconName = 'log-in';
             }
 
             return <Ionicons name={iconName} size={size} color={color} />;
@@ -74,6 +78,7 @@ export default function App() {
         <Tab.Screen name="Content" component={ContentSuggestionScreen} />
         <Tab.Screen name="Engagement" component={EngagementScreen} />
         <Tab.Screen name="Analytics" component={AnalyticsScreen} />
+        <Tab.Screen name="Auth" component={AuthScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
